@@ -12,14 +12,17 @@ api:
       memory: 250Mi
   ingress:
     enabled: true
-    # annotations: {}
+    annotations:
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: "/$1"
     # className: nginx
     hosts:
-    - paths:
-      - path: "/"
-        pathType: Prefix
-# Leave this empty if you're not going to associate a domain with your ingress public IP
-      host: ''
+    - host: '' # Leave this empty if you're not going to associate a domain with your ingress public IP
+      paths:
+      - path: /api/(.*)
+        pathType: ImplementationSpecific
+
+      
       
   
 
