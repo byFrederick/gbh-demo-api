@@ -44,4 +44,4 @@ jobs:
           --install \
           --namespace=${{ vars.NAMESPACE }} \
           --create-namespace \
-          -- set api.image=${{ vars.DOCKERHUB_USERNAME }}/gbh-demo-api:${{ github.sha }}
+          --set api.image=${{ vars.DOCKERHUB_USERNAME }}/gbh-demo-api:${{ github.sha }}
