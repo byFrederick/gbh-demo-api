@@ -1,0 +1,25 @@
+api:
+  replicaCount: 1
+  # image: 
+  port: 3001
+  servicePort: 80
+  resources:
+    requests:
+      cpu: 50m
+      memory: 100Mi
+    limits:
+      cpu: 250m
+      memory: 250Mi
+  ingress:
+    enabled: true
+    # annotations: {}
+    # className: nginx
+    hosts:
+    - paths:
+      - path: "/"
+        pathType: Prefix
+# Leave this empty if you're not going to associate a domain with your ingress public IP
+      host: ''
+      
+  
+
